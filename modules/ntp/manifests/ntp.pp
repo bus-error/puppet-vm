@@ -4,6 +4,10 @@ class ntp {
 	}
 
 	service { "ntpd":
-		ensure => running,
+		ensure => running
+	}
+	
+	file { "/etc/ntp.conf":
+		source => "puppet:///modules/ntp/client_ntp.conf",
 	}
 }
